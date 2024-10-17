@@ -1,0 +1,604 @@
+##Fifty Years - English Version
+
+import random
+import time
+
+cities = [
+    "Bangkok, Thailand", "Hanoi, Vietnam", "Ho Chi Minh City, Vietnam",
+    "Vientiane, Laos", "Phnom Penh, Cambodia", "Battambang, Cambodia",
+    "Yangon, Myanmar", "Nay Pyi Taw, Myanmar", "Dhaka, Bangladesh",
+    "Chittagong, Bangladesh",
+    "Hong Kong, China", "Kowloon, China", "Guangzhou, China", "Shenzhen, China", "Beijing, China", "Shanghai, China",
+    "Chiang Mai, Thailand", "Sihanoukville, Cambodia", "Quang Tri, Vietnam", "Phuket, Thailand",
+    "Manila, Philippines", "Quezon City, Philippines",
+    "Tokyo, Japan", "Kyoto, Japan", "Fukuoka, Japan", "Seoul, South Korea", "Busan, South Korea",
+    "P'yongyang, North Korea", "Hamhung, North Korea", "Ulaanbaatar, Mongolia", "Erdenet, Mongolia", "Taipei, Taiwan",
+    "Tainan, Taiwan", "Taichung, Taiwan","Wuhan, China", "Shanghai, China", "Chongqing, China",
+    "Bishkek, Kyrgyzstan", "Kathmandu, Nepal", "Karakol, Kyrgyzstan", "Kuala Lumpur, Malaysia", "Kota Kinabalu, Malaysia",
+    "Petaling Jaya, Malaysia", "Singapore, Singapore", "Turkmenabat, Turkmenistan", "Ashgabat, Turkmenistan",
+    "Luang Prabang, Laos", "Savannakhet, Laos", "Davao City, Philippines", "Daegu, South Korea", "Jeju City, South Korea",
+    "Jakarta, Indonesia", "Surabaya, Indonesia", "Almaty, Kazakhstan", "Nur-Sultan, Kazakhstan",
+    "Shymkent, Kazakhstan", "Pavlodar, Kazakhstan", "Tashkent, Uzbekistan", "Samarkand, Uzbekistan", "Bukhara, Uzbekistan",
+    "Dushanbe, Tajikistan", "Khujand, Tajikistan", "Kulob, Tajikistan",
+    "Delhi, India", "Mumbai, India", "Kolkata, India", "Hyderabad, India", "Kathmandu, Nepal", "Pokhara, Nepal",
+    "Thimphu, Bhutan", "Punakha, Bhutan", "Kandy, Sri Lanka", "Sri Jayawardenepura-Kotte, Sri Lanka", "Colombo, Sri Lanka",
+    "Hyderabad, Pakistan", "Karachi, Pakistan", "Islamabad, Pakistan", "Moscow, Russia", "St. Petersburg, Russia", 
+    "Grozny, Russia", "Nizhniy Novgorod, Russia", "Dili, Timor Leste", "Maliana, Timor Leste", "Port Moresby, Papua New Guinea",
+    "Lae, Papua New Guinea", "Wewak, Papua New Guinea", "Bandar Seri Begawan, Brunei", "Seria, Brunei", "Male, Maldives",
+    "Addu City, Maldives", "Ankara, Türkiye", "Istanbul, Türkiye","Damascus, Syria", "Aleppo, Syria", "Jerusalem, Israel",
+    "Tel Aviv, Israel", "Beirut, Lebanon", "Tripoli, Lebanon", "Riyadh, Saudi Arabia", "Mecca, Saudi Arabia", 
+    "Medina, Saudi Arabia", "Baghdad, Iraq", "Fallujah, Iraq", "Erbil, Iraq", "Tehran, Iran", "Tabriz, Iran", 
+    "Rasht, Iran", "Kabul, Afghanistan", "Jalalabad, Afghanistan", "Kuwait City, Kuwait", "Al-Jahra, Kuwait",
+    "Gaza, Palestine", "Ramallah, Palestine", "Rafah, Palestine"
+]
+
+names = {
+    "Thailand": {
+        "female": ["Anong", "Chailai", "Aom", "Amara", "Lawana", "Kwang"],
+        "male": ["Asnee", "Somchair", "Chai", "Anuman", "Lamon", "Chakrii"],
+        "surnames": ["Adulyadej", "Amarin", "Bannarasee", "Chaichana", "Aromdee"]
+    },
+    "Vietnam": {
+        "female": ["Anh", "Diep", "Hanh", "Duyen", "Quynh"],
+        "male": ["Bao", "Minh", "Giang", "Ha", "Buu", "Danh"],
+        "surnames": ["Bui", "Phan", "Do", "Ly", "Nguyen"]
+    },
+    "Laos": {
+        "female": ["Alana", "Lawan", "Mala", "Sawan", "Sunya"],
+        "male": ["Anan", "Anovong", "Atsawin", "Som", "Nai"],
+        "surnames": ["Inthavong", "Chanthavong", "Yang", "Lao", "Vongxay"]
+    },
+    "Cambodia": {
+        "female": ["Sereysothea", "Meas", "Ran", "Chantrea", "Kun Thea"],
+        "male": ["Saman", "Borey", "Narith", "Kravann", "Leap"],
+        "surnames": ["Huoy", "Ros", "Meas", "Phang", "Um"]
+    },
+    "Myanmar": {
+        "female": ["Nan", "Sanda", "Thang", "Thiri", "Hayma"],
+        "male": ["Ko", "Aung", "Han", "Thura", "Wunna"],
+        "surnames": [""]
+    },
+    "Bangladesh": {
+        "female": ["Chaaya", "Arulmani", "Kamala", "Diya", "Nasrin"],
+        "male": ["Abdul Batin", "Abd al-Raman", "Abu al-Qasim", "Islamuddin", "Mujib"],
+        "surnames": ["Ahmad", "Bhattacharya", "Bagchi", "Chowdhury", "Saha", "Khan"]
+    },
+    "China": {
+        "female": ["Jingmei", "Mei", "Feiling", "Ai", "Chun", "Li", "Lilliana"],
+        "male": ["Han", "Jong", "Chen", "An", "Haoyu", "Ping"],
+        "surnames": ["He", "Wen", "Jin", "Liu", "Zhao", "Huang"]
+    },
+    "Philippines": {
+        "female": ["Maria", "Angelica", "Liza", "Jen", "Aileen"],
+        "male": ["Jose", "Mark", "Antonio", "Paolo", "Miguel"],
+        "surnames": ["Pascal", "Mendoza", "Cruz", "Santos", "Garcia"]
+    },
+    "Japan": {
+        "female": ["Aiko", "Mitsuko", "Tomoko", "Yuri", "Saori", "Murasaki"],
+        "male": ["Asato", "Akira", "Taro", "Keiya", "Naoto"],
+        "surnames": ["Yamada", "Yamamoto", "Uehara", "Takeda", "Kawasaki", "Sakai", "Shikibu"]
+    },
+    "South Korea": {
+        "female": ["Yun-seong", "Eun Ae", "Chae-won", "Aera", "Ji-a"],
+        "male": ["Bong", "Dae-jung", "Baek-hyun", "Joo Won", "Dae-ho"],
+        "surnames": ["Kim", "Park", "Jang", "Cheong", "Choe", "Yi"]
+    },
+    "North Korea": {
+        "female": ["Eunseo", "Mi-gyong", "Sol-ju", "Dasom", "Na-mi", "Sae-byeok"],
+        "male": ["Haneul", "Shin", "Do Yoon", "Baek-hyun", "Ho"],
+        "surnames": ["Kim", "Park", "Li", "Kang", "Yoon"]
+    },
+    "Mongolia": {
+        "female": ["Altansarnai", "Ankhbayar", "Erdenesetseg", "Chinua", "Batzorig"],
+        "male": ["Otgonbayar", "Batu", "Chingis", "Nergui", "Amarjargal"],
+        "surnames": ["Jalair", "Naiman", "Olkhonud", "Bodonguud", "Mogol"]
+    },
+    "Taiwan": {
+        "female": ["Xiao Ting", "Ya Ting", "Mei Ling", "Hui Jun", "Zhi Ting"],
+        "male": ["Jia Hao", "Ming Jie", "Jun Yu", "Zhi Xiang", "Guo Hao"],
+        "surnames": ["Chen", "Lin", "Huang", "Wu", "Li"]
+    },
+    "Kyrgyzstan": {
+        "female": ["Aigul", "Saniya", "Gulnur", "Nurgul", "Aynura"],
+        "male": ["Nurlan", "Almaz", "Edil", "Timur", "Sultan"],
+        "surnames": ["Sultanov", "Asanov", "Imanaliev", "Toktogulov", "Bekov"]
+    },
+    "Malaysia": {
+        "female": ["Aisha", "Siti", "Farah", "Hana", "Nurul"],
+        "male": ["Amir", "Ahmad", "Ikmal", "Rizwan", "Hafiz"],
+        "surnames": ["Abdullah", "Ahmad", "Ismail", "Mohd", "Hassan"]
+    },
+    "Singapore": {
+        "female": ["Mei Ling", "Aisha", "Xiaohui", "Siti", "Jiahui"],
+        "male": ["Wei Chen", "Raj", "Amir", "Jun Jie", "Zhen Wei"],
+        "surnames": ["Tam", "Lin", "Ng", "Kumar", "Lee"]
+    },
+    "Turkmenistan": {
+        "female": ["Aysel", "Gulnara", "Leila", "Darya", "Medine"],
+        "male": ["Aman", "Murat", "Arslan", "Janan", "Nurmuhammad"],
+        "surnames": ["Akmuritov", "Kuliyev", "Durdyev", "Mammadov", "Orazov"]
+    },
+    "Nepal": {
+        "female": ["Aarti", "Pratiksha", "Manisha", "Sita", "Durga"],
+        "male": ["Rajesh", "Pradeep", "Bhanu", "Krishna", "Sanjay"],
+        "surnames": ["Sharma", "Thapa", "Ghimire", "Karki", "Bhandari"]
+    },
+    "Indonesia": {
+        "female": ["Ayu", "Sari", "Putri", "Wati", "Dewi"],
+        "male": ["Budi", "Joko", "Rudi", "Agus", "Adi"],
+        "surnames": ["Santoso", "Prabowo", "Supriyadi", "Hartono", "Wijaya", "Ratna"]
+    },
+    "Kazakhstan": {
+        "female": ["Aigerim", "Zhanar", "Altyn", "Dilara", "Yasmina"],
+        "male": ["Aibek", "Damir", "Nurzhan", "Askar", "Temir"],
+        "surnames": ["Nurgaliyev", "Tolegenov", "Kairbekov", "Aitbai", "Mukhametshin"]
+    },
+    "Uzbekistan": {
+        "female": ["Dilnoza", "Saida", "Malika", "Firuza", "Nilufar"],
+        "male": ["Aziz", "Javlon", "Eldor", "Bekzod", "Sanjar"],
+        "surnames": ["Karimov", "Tashkentov", "Nurmatov", "Rahmonov", "Sultonov"]
+    },
+    "Tajikistan": {
+        "female": ["Shirin", "Laila", "Gulnora", "Sitora", "Nilufar"],
+        "male": ["Farid", "Nasrullo", "Davlat", "Jamshed", "Samandar"],
+        "surnames": ["Rahmonov", "Karimov", "Ismoilov", "Zokirov", "Saidzoda"]
+    },
+    "India": {
+        "female": ["Aanya", "Kavya", "Meera", "Anika", "Pooja"],
+        "male": ["Aarav", "Vihaan", "Rohan", "Arjun", "Siddharth"],
+        "surnames": ["Sharma", "Patel", "Singh", "Gupta", "Iyer"]
+    },
+    "Bhutan": {
+        "female": ["Pema", "Choden", "Sangay", "Sonam", "Tshering"],
+        "male": ["Tashi", "Dorji", "Jigme", "Phuntsho", "Karma"],
+        "surnames": ["Wangchuk", "Dorji", "Tshering", "Namgay", "Pemjore"]
+    },
+    "Sri Lanka": {
+        "female": ["Anjali", "Kavindi", "Nimali", "Sharmila", "Tharushi"],
+        "male": ["Arjun", "Dinesh", "Niroshan", "Pradeep", "Sanjaya"],
+        "surnames": ["Perera", "Fernando", "Silva", "Kumarasinghe", "Jayasinghe"]
+    },
+    "Pakistan": {
+        "female": ["Aisha", "Fatima", "Sana", "Zainab", "Hira"],
+        "male": ["Ahmed", "Bilal", "Hasan", "Omar", "Imran"],
+        "surnames": ["Khan", "Malik", "Shah", "Siddiqui", "Butt"]
+    },
+    "Russia": {
+        "female": ["Semichayevskaya", "Lyudmila", "Svetlana", "Anna", "Nataliya"],
+        "male": ["Andriy", "Anatoliy", "Mikhail", "Ivan", "Vasily"],
+        "surnames": ["Popov", "Gorbachev", "Petrov", "Smirnov", "Sidorov"]
+    },
+    "Timor Leste": {
+        "female": ["Ana", "Maria", "Rosa", "Teresa", "Fatima"],
+        "male": ["Jose", "Rui", "Manuel", "Miguel", "Paulo"],
+        "surnames": ["da Costa", "Soares", "dos Santos", "Pereira", "Martins"]
+    },
+    "Papua New Guinea": {
+        "female": ["Mary", "Rose", "Anna", "Lucy", "Jane"],
+        "male": ["John", "Peter", "Samuel", "Michael", "David"],
+        "surnames": ["Kila", "Pawa", "Tali", "Baki", "Wani"]
+    },
+    "Brunei": {
+        "female": ["Aisha", "Fatimah", "Nora", "Siti", "Liyana"],
+        "male": ["Amir", "Harif", "Hafiz", "Ikmal", "Naim"],
+        "surnames": ["Abdullah", "Haji", "Omar", "Yusof", "Rahman"]
+    },
+    "Maldives": {
+        "female": ["Aisha", "Mariyam", "Fathimath", "Aminath", "Nadira"],
+        "male": ["Mohamed", "Ahmed", "Ibrahim", "Hussein", "Ismail"],
+        "surnames": ["Abdul", "Mohamed", "Hussain", "Ali", "Naseem"]
+    },
+    "Türkiye": {
+        "female": ["Elif", "Aylin", "Zeynep", "Derya", "Melis"],
+        "male": ["Emre", "Can", "Kerem", "Baran", "Alper"],
+        "surnames": ["Yilmaz", "Demir", "Kaya", "Arslan", "Şahin"]
+    },
+    "Syria": {
+        "female": ["Layla", "Amina", "Hana", "Noor", "Yasmin"],
+        "male": ["Amir", "Omar", "Ziad", "Samir", "Rami"],
+        "surnames": ["Al-Masri", "Al-Hakim", "Al-Ali", "Al-Farouq", "Al-Sayed"]
+    },
+    "Israel": {
+        "female": ["Miriam", "Noa", "Yael", "Talia", "Shira"],
+        "male": ["David", "Eli", "Yonatan", "Itai", "Amir"],
+        "surnames": ["Cohen", "Levy", "Mizrahi", "Ben-David", "Shapiro"]
+    },
+    "Lebanon": {
+        "female": ["Layla", "Nour", "Rania", "Yasmin", "Dima"],
+        "male": ["Jad", "Samir", "Elias", "Antoine", "Rami"],
+        "surnames": ["Haddad", "Khoury", "Saliba", "Fakhoury", "Mansour"]
+    },
+    "Saudi Arabia": {
+        "female": ["Fatimah", "Aisha", "Sarah", "Noor", "Hala"],
+        "male": ["Abdullah", "Mohammed", "Khalid", "Faisal", "Salman"],
+        "surnames": ["Al-Saud", "Al-Faisal", "Al-Hussein", "Al-Amoudi", "Al-Ghamdi"]
+    },
+    "Iraq": {
+        "female": ["Zainab", "Amina", "Layla", "Fatimah", "Sara"],
+        "male": ["Ali", "Hassan", "Omar", "Yasser", "Mustafa"],
+        "surnames": ["Al-Hakim", "Al-Jabari", "Al-Safi", "Al-Mansour", "Al-Saad"]
+    },
+    "Iran": {
+        "female": ["Fatemeh", "Yasmin", "Niloufar", "Leila", "Taraneh"],
+        "male": ["Amir", "Reza", "Kian", "Arash", "Siavash"],
+        "surnames": ["Mohammadi", "Farahani", "Hosseini", "Kazemi", "Rahimi"]
+    },
+    "Afghanistan": {
+        "female": ["Amina", "Zainab", "Fatima", "Samira", "Shirin"],
+        "male": ["Ahmad", "Ali", "Farid", "Hamid", "Rahim"],
+        "surnames": ["Khan", "Ahmadzai", "Sherzai", "Popalzai", "Jalali"]
+    },
+    "Kuwait": {
+        "female": ["Fatima", "Noor", "Aisha", "Hind", "Dana"],
+        "male": ["Mohammed", "Khaled", "Faisal", "Talal", "Ali"],
+        "surnames": ["Al-Sabah", "Al-Ali", "Al-Mutairi", "Al-Humaidi", "Al-Qattan"]
+    },
+    "Palestine": {
+        "female": ["Amina", "Noor", "Hana", "Laila", "Yasmin"],
+        "male": ["Ahmed", "Youssef", "Omar", "Tariq", "Ziad"],
+        "surnames": ["Al-Masri", "Abu Khalil", "Nasser", "Jaber", "Khoury"]
+    }
+}
+addiction = ["Alcohol", "Smoking", "Meth", "Crack", "Anime", "Dopamine"]
+family = ["Mother", "Father"]
+genders = ["Male", "Female"]
+money = 0
+job_title = None
+relationship = 0
+relationship_status = "Single"
+house = 0
+house_size = "No House"
+child = 0
+rel_child = "No Children"
+move = 0
+elite_school = random.choice(cities)
+ch_ed = 0
+vac = 0
+lang = 0
+proj = 0
+pet = 0
+pet_40 = 0
+rand_addiction = random.choice(addiction)
+score = 0
+animal = 0
+animal_gender = random.choice(genders)
+vacation_location = random.choice(cities)
+tiny_house_achievement = 0 ##Buy a tiny house
+north_korea_achievement = 0 ##Have your vacation spot be Pyongyang, North Korea
+cold_lover_achievement = 0 ##Divorce your spouse
+what_was_that_name_achievement = 0 ##Be named Semichayevskaya
+genji_achievement = 0 ##Be named Murasaki Shikibu and become a writer
+teamwork_achievement = 0 ##Work together on your school project
+
+print("***FIFTY YEARS BY CASTELLDEFELS***")
+print("VERSION 1.0")
+print("Try to live your best life and get a good score at the end!")
+
+first_name = "(none)"
+surname = "(none)"
+
+player_gender = random.choice(genders)
+residence = random.choice(cities)
+country = residence.split(", ")[1]
+
+if country in names:
+    if player_gender == "Male":
+        first_name = random.choice(names[country]["male"])
+    else:
+        first_name = random.choice(names[country]["female"])
+    
+    surname = random.choice(names[country]["surnames"]) if names[country]["surnames"] else ""
+
+if first_name == "Semichayevskaya":
+    what_was_that_name_achievement = 1
+
+# Corrected condition for countries
+if country in ["South Korea", "Vietnam", "North Korea"]:
+    print(f"My name is {surname} {first_name} and I was born in {residence}. I am a {player_gender}.")
+else:
+    print(f"My name is {first_name} {surname} and I was born in {residence}. I am a {player_gender}.")
+
+# Select child and grandchild names based on gender
+child_gender = random.choice(["male", "female"])
+child_name = random.choice(names[country][child_gender])
+grandchild_gender = random.choice(["male", "female"])
+grandchild_name = random.choice(names[country][grandchild_gender])
+friend_gender = random.choice(["male","female"])
+friend_name = random.choice(names[country][friend_gender])
+job_title = "Unemployed"
+
+age = 0
+
+while age < 50:
+    time.sleep(2)
+    age += 1
+    print("I am now", age, "years old.")
+    
+    # School age checks
+    if age == 5:
+        print("I have started primary school.")
+        if pet == 0:
+            print("You have become lonely lately, and you want to find a solution.")
+            print("\n1 - Become friends with",friend_name)
+            print("2 - Get a pet")
+            pet = input("\nWhat will you do?")
+            
+            if pet == "1":
+                print("You and",friend_name,"have a lot of fun together.")
+            if pet == "2":
+                print("You and your dog play a lot of games of fetch and make some good memories together. <3")
+    if age == 10:
+        print("Your teacher assigns you and your friend,",friend_name," a project worth half of your grade.")
+        print("\n1 - Take over the project.")
+        print("2 - Share responsibility.")
+        print("3 - Let",friend_name," do all of the project on their own.")
+        proj = input("\nWhat will you do?")
+        
+        if proj == "1":
+            print("You took over the entire project, stressing yourself out and alienating your friend.")
+        if proj == "2":
+            print(friend_name," had some good insights, and you both received the top grade in the class!")
+            teamwork_achievement = 1
+        if proj == "3":
+            print("Your friend was mad at you for doing nothing and requested that you be removed from the project.")
+            
+    elif age == 11:
+        print("I have started lower secondary school.")
+    elif age == 14:
+        print("I have started upper secondary school.")
+    elif age == 15:
+        if lang == 0:
+            print("You have been thinking about learning a new language.")
+            print("\n1 - Learn French")
+            print("2 - Learn German")
+            print("3 - Learn Spanish")
+            print("4 - Learn Russian")
+            print("5 - I need to focus on my home language first.")
+            lang = input("\nWhat will you do?")
+            
+            if lang == "1":
+                print("Après la pluie, le beau temps.")
+            if lang == "2":
+                print("Das Billige ist immer das Teuerste.")
+            if lang == "3":
+                print("El que la hace, la paga.")
+            if lang == "4":
+                print("Любовь зла – она заставит тебя полюбить козла.")
+            if lang == "5":
+                print("Though you regret not learning another language, your grammar in your home language has improved!")
+    elif age == 18:
+        print("I have graduated upper secondary school and will start college.")
+        
+        job = ""
+        while job not in {"1", "2", "3", "4", "5", "6", "7"}:
+            print("\n1 - Medicine")
+            print("2 - Education")
+            print("3 - Law")
+            print("4 - English")
+            print("5 - Engineering")
+            print("6 - Criminal Justice")
+            print("7 - Computer Science")
+            job = input("\nWhat should I study? ")
+        
+        if job == "1":
+            job_title = "Doctor"
+        elif job == "2":
+            job_title = "Teacher"
+        elif job == "3":
+            job_title = "Attorney"
+        elif job == "4":
+            job_title = "Writer"
+        elif job == "5":
+            job_title = "Engineer"
+        elif job == "6":
+            job_title = "Police"
+        elif job == "7":
+            job_title = "Software Developer"
+
+    if age >= 18:
+        if job_title == "Doctor":
+            money += 140000
+        elif job_title == "Teacher":
+            money += 35000
+        elif job_title == "Attorney":
+            money += 95000
+        elif job_title == "Writer":
+            money += 30000
+        elif job_title == "Engineer":
+            money += 75000
+        elif job_title == "Police":
+            money += 55000
+        elif job_title == "Software Developer":
+            money += 120000
+    if first_name == "Murasaki":
+        if surname == "Shikibu":
+            if job_title == "Writer":
+                genji_achievement = 1
+
+    if relationship == 0 and age >= 19:
+        print("You used the dating app to find a lover.")
+        print("\n1 - Husband")
+        print("2 - Wife")
+        print("3 - None")
+        relationship = input("\nWhat will I do?")
+        
+        if relationship == "1":
+            relationship_status = f'Married to Mr. {surname}'
+        elif relationship == "2":
+            relationship_status = f'Married to Mrs. {surname}'
+        elif relationship == "3":
+            relationship_status = "Voluntary Celibacy"
+        
+    if house == 0 and money >= 350000:
+        print("Lately, you've been looking at real estate in your area.")
+        print("\n1 - I want to buy a big house ($300,000).")
+        print("2 - I want a modest house ($150,000).")
+        print("3 - I want a tiny house ($50,000).")
+        house = input("\nWhich option suits you?")
+        
+        if house == "1":
+            money -= 300000
+            house_size = "Large house"
+        elif house == "2":
+            money -= 150000
+            house_size = "Modest house"
+        elif house == "3":
+            money -= 50000
+            house_size = "Tiny house"
+            tiny_house_achievement = 1
+    
+    if child == 0 and age == 25:
+        print("Do you want a child?")
+        print("\n1 - Yes")
+        print("2 - No")
+        child = input("\nPick an option.")
+        
+        if child == "1":
+            money -= 55000
+            rel_child = child_name
+        else:
+            rel_child = "No Children"
+    
+    if animal == 0 and age == 27:
+        print ("You have been thinking about getting a pet.")
+        print("\n1 - Get a cat.")
+        print("2 - Get a dog.")
+        print("3 - Get an armadillo.")
+        print("4 - No animals for me.")
+        animal = input("\nWhat will you do?")
+        
+        if animal in {"1", "2", "3"}:
+            if animal_gender == "Male":
+                animal_name = random.choice(names[country]["male"])
+            elif animal_gender == "Female":
+                animal_name = random.choice(names[country]["female"])
+      
+    elif age == 30 and move == 0:
+        print("You have been offered an opportunity to leave", residence)
+        print("\n1 - Leave", residence, "for good.")
+        print("2 - Screw living in another country; I want to live on a boat!")
+        print("3 - I'm happy here.")
+        move = input("\nPick an option.")
+        
+        if move == "1":
+            residence = random.choice(cities)
+        if move == "2":
+            residence = "a boat."
+        
+    elif age == 33 and relationship not in {"3"}:
+        print("You think your spouse may be cheating on you!")
+        print("\n1 - Divorce them.")
+        print("2 - I don't think they'd cheat on me!")
+        div = input("\nWhat will you do?")
+        
+        if div == "1":
+            print("You divorced your spouse. And got some of their money.")
+            relationship_status = "Divorced"
+            cold_lover_achievement = 1
+            money += 35000
+        
+    elif age == 35 and child == "1":
+        print(f"{child_name} wants to go to an expensive private school in {elite_school}.")
+        print("\n1 - Let them go to the school. ($50,000)")
+        print("2 - It is much too expensive.")
+        ch_ed = input("\nPick an option.")
+        
+        if ch_ed == "1":
+            money -= 50000
+            print("Though it was costly,",child_name,"'s grades have improved significantly.")
+    
+    elif age == 40:
+        if pet == "1":
+            print("Your friend",friend_name,"is struggling with a",rand_addiction,"addiction.")
+            print("\n1 - Get them into rehab.")
+            print("2 - Let them continue abusing",rand_addiction,".")
+            pet_40 = input("\nWhat will you do?")
+            
+            if pet_40 == "1":
+                print("With your help, your friend,",friend_name,"overcomes their",rand_addiction,"addiction.")
+            elif pet_40 == "2":
+                print("Unfortunately,",friend_name,"died from an overdose on",rand_addiction,".")
+        
+    elif age == 45 and child == "1":
+        print(f"Your child, {child_name}, has given birth to your grandchild, {grandchild_name}.")
+        
+    elif age == 49 and vac == 0:
+        print("You only have one year left to live, and you want to do something fun before you cross over to the great beyond.")
+        print("\n1 - Visit", vacation_location)
+        print("2 - Enjoy your last year with your family.")
+        print("3 - Panic")
+        vac = input("\nWhat do you want to do?")
+        
+        if vac == "1":
+            print("You had a lot of fun on your vacation.")
+            if vacation_location == "Pyongyang":
+                north_korea_achievement = 1
+        elif vac == "2":
+            print("Your family is sad to see you go, but enjoy the time together nevertheless.")
+        elif vac == "3":
+            print("The police come to your house after the neighbours reported a disturbance and you were issued a citation.")
+    
+    # Display net worth and relationship status each year
+    print("I live in", residence)
+    print("I work as a",job_title)
+    print("My net worth is $", money, ".")
+    print("Relationship status:", relationship_status)
+    print("Living arrangements:", house_size)
+    if child == "1":
+        print("Children:", child_name)
+    if animal in {"1", "2", "3"}:
+        print("Pets:", animal_name)
+    print("\n" + "-" * 40 + "\n")  # Gap between years
+
+if money >= 0:
+    score = money/100000
+if lang not in {"5"}:
+    score += 5
+if relationship_status not in {"Voluntary Celibacy", "Divorced"}:
+    score += 2
+if house_size == "1":
+    score += 10
+elif house_size == "2":
+    score += 7.5
+elif house_size == "3":
+    score += 5
+if child == "1":
+    score += 2
+if ch_ed == "1":
+    score += 4
+if vac not in {"3"}:
+    score += 3
+else:
+    score -= 5
+if pet == "1":
+    score += 3
+elif pet == "2":
+    score += 4
+if animal in {"1", "2", "3"}:
+    score += 1
+if tiny_house_achievement == 1:
+    score += 3
+if north_korea_achievement == 1:
+    score += 5
+if cold_lover_achievement == 1:
+    score += 3
+if what_was_that_name_achievement == 1:
+    score += 5
+if genji_achievement == 1:
+    score += 10
+if teamwork_achievement == 1:
+    score += 2
+print("I died. My score is ",score,".")
+if tiny_house_achievement == 1:
+    print("I got the tiny house achievement!")
+if north_korea_achievement == 1:
+    print("I got the visiting North Korea achievement!")
+if cold_lover_achievement == 1:
+    print("I got the cold lover achievement!")
+if what_was_that_name_achievement == 1:
+    print("I got the what was that name achievement!")
+if genji_achievement == 1:
+    print("I got the genji achievement!")
+if teamwork_achievement == 1:
+    print("I got the teamwork achievement!")
+print("Thank you very much for playing! Suggestions should be sent to THalleaux07@gmail.com.")
