@@ -29,7 +29,9 @@ cities = [
     "Tel Aviv, Israel", "Beirut, Lebanon", "Tripoli, Lebanon", "Riyadh, Saudi Arabia", "Mecca, Saudi Arabia", 
     "Medina, Saudi Arabia", "Baghdad, Iraq", "Fallujah, Iraq", "Erbil, Iraq", "Tehran, Iran", "Tabriz, Iran", 
     "Rasht, Iran", "Kabul, Afghanistan", "Jalalabad, Afghanistan", "Kuwait City, Kuwait", "Al-Jahra, Kuwait",
-    "Gaza, Palestine", "Ramallah, Palestine", "Rafah, Palestine"
+    "Gaza, Palestine", "Ramallah, Palestine", "Rafah, Palestine", "Abu Dhabi, UAE", "Dubai, UAE", "Sanaa, Yemen", 
+    "Al Mukalla, Yemen", "Muscat, Oman", "Salalah, Oman", "Canberra, Australia", "Sydney, Australia", "Perth, Australia",
+    "Auckland, New Zealand", "Wellington, New Zealand", "Christchurch, New Zealand", "Amman, Jordan"
 ]
 
 names = {
@@ -237,6 +239,36 @@ names = {
         "female": ["Amina", "Noor", "Hana", "Laila", "Yasmin"],
         "male": ["Ahmed", "Youssef", "Omar", "Tariq", "Ziad"],
         "surnames": ["Al-Masri", "Abu Khalil", "Nasser", "Jaber", "Khoury"]
+    },
+    "UAE": {
+        "female": ["Fatima", "Aisha", "Noor", "Latifa", "Huda"],
+        "male": ["Mohammed", "Ahmed", "Khalid", "Saif", "Rashid"],
+        "surnames": ["Al-Farsi", "Al-Mansoori", "Al-Hamadi", "Al-Nuaimi", "Al-Qassimi"]
+    },
+    "Yemen": {
+        "female": ["Amina", "Fatima", "Noor", "Samira", "Layla"],
+        "male": ["Mohammed", "Ahmed", "Ali", "Hassan", "Ibrahim"],
+        "surnames": ["Al-Saadi", "Al-Hamadi", "Al-Mawardi", "Al-Qadi", "Al-Sharabi"]
+    },
+    "Oman": {
+        "female": ["Aisha", "Fatima", "Khawla", "Yasmin", "Muna"],
+        "male": ["Mohammed", "Ahmed", "Khalid", "Saif", "Hamad"],
+        "surnames": ["Al-Said", "Al-Busaidi", "Al-Harthy", "Al-Mahruqi", "Al-Zadjali"]
+    },
+    "Australia": {
+        "female": ["Olivia", "Charlotte", "Amelia", "Mia", "Ella"],
+        "male": ["Oliver", "Jack", "William", "Noah", "James"],
+        "surnames": ["Smith", "Jones", "Brown", "Wilson", "Taylor"]
+    },
+    "New Zealand": {
+        "female": ["Charlotte", "Ava", "Amelia", "Harper", "Mia"],
+        "male": ["Oliver", "Jack", "Lucas", "Noah", "Leo"],
+        "surnames": ["Smith", "Williams", "Jones", "Taylor", "Brown"]
+    },
+    "Jordan": {
+        "female": ["Amina", "Noor", "Fatima", "Mariam", "Sara"],
+        "male": ["Mohammed", "Ahmad", "Ibrahim", "Youssef", "Khaled"],
+        "surnames": ["Al-Masri", "Al-Ajlouni", "Al-Khateeb", "Al-Tamimi", "Al-Fahad"]
     }
 }
 addiction = ["Alcohol", "Smoking", "Meth", "Crack", "Anime", "Dopamine"]
@@ -269,9 +301,10 @@ cold_lover_achievement = 0 ##Divorce your spouse
 what_was_that_name_achievement = 0 ##Be named Semichayevskaya
 genji_achievement = 0 ##Be named Murasaki Shikibu and become a writer
 teamwork_achievement = 0 ##Work together on your school project
+cont = 0
 
 print("***FIFTY YEARS BY CASTELLDEFELS***")
-print("VERSION 1.0")
+print("VERSION 1.1")
 print("Try to live your best life and get a good score at the end!")
 
 first_name = "(none)"
@@ -601,4 +634,6 @@ if genji_achievement == 1:
     print("I got the genji achievement!")
 if teamwork_achievement == 1:
     print("I got the teamwork achievement!")
+
+
 print("Thank you very much for playing! Suggestions should be sent to THalleaux07@gmail.com.")
