@@ -31,7 +31,9 @@ cities = [
     "Rasht, Iran", "Kabul, Afghanistan", "Jalalabad, Afghanistan", "Kuwait City, Kuwait", "Al-Jahra, Kuwait",
     "Gaza, Palestine", "Ramallah, Palestine", "Rafah, Palestine", "Abu Dhabi, UAE", "Dubai, UAE", "Sanaa, Yemen", 
     "Al Mukalla, Yemen", "Muscat, Oman", "Salalah, Oman", "Canberra, Australia", "Sydney, Australia", "Perth, Australia",
-    "Auckland, New Zealand", "Wellington, New Zealand", "Christchurch, New Zealand", "Amman, Jordan"
+    "Auckland, New Zealand", "Wellington, New Zealand", "Christchurch, New Zealand", "Amman, Jordan", 
+    "Minsk, Belarus", "Brest, Belarus", "Gomel, Belarus", "Kyiv, Ukraine", "Dnipro, Ukraine", "L'viv, Ukraine", 
+    "Kharkiv, Ukraine", "Sevastopol, Ukraine", "Chisinau, Moldova", "Tiraspol, Moldova"
 ]
 
 names = {
@@ -269,6 +271,21 @@ names = {
         "female": ["Amina", "Noor", "Fatima", "Mariam", "Sara"],
         "male": ["Mohammed", "Ahmad", "Ibrahim", "Youssef", "Khaled"],
         "surnames": ["Al-Masri", "Al-Ajlouni", "Al-Khateeb", "Al-Tamimi", "Al-Fahad"]
+    },
+    "Belarus": {
+        "female": ["Anastasiya", "Ulyana", "Darya", "Irina", "Elena"],
+        "male": ["Alexandr", "Vladimir", "Pavel", "Maxim", "Yuri"],
+        "surnames": ["Ivanov", "Petrov", "Kovalev", "Sidorov", "Bashilov"]
+    },
+    "Ukraine": {
+        "female": ["Olena", "Kateryna", "Iryna", "Tetiana", "Natalia", "Nadia"],
+        "male": ["Andriy", "Viktor", "Taras", "Dmytro", "Serhiy"],
+        "surnames": ["Shevchenko", "Kovalenko", "Melnyk", "Bondarenko", "Petryk"]
+    },
+    "Moldova": {
+        "female": ["Ana", "Maria", "Elena", "Irina", "Veronica"],
+        "male": ["Ion", "Vasile", "Andrei", "Dorin", "Mihai"],
+        "surnames": ["Popescu", "Ionescu", "Moldovan", "Cojocaru", "Stan"]
     }
 }
 addiction = ["Alcohol", "Smoking", "Meth", "Crack", "Anime", "Dopamine"]
@@ -304,7 +321,7 @@ teamwork_achievement = 0 ##Work together on your school project
 cont = 0
 
 print("***FIFTY YEARS BY CASTELLDEFELS***")
-print("VERSION 1.1")
+print("VERSION 1.2")
 print("Try to live your best life and get a good score at the end!")
 
 first_name = "(none)"
@@ -403,7 +420,7 @@ while age < 50:
         print("I have graduated upper secondary school and will start college.")
         
         job = ""
-        while job not in {"1", "2", "3", "4", "5", "6", "7"}:
+        while job not in {"1", "2", "3", "4", "5", "6", "7", "8"}:
             print("\n1 - Medicine")
             print("2 - Education")
             print("3 - Law")
@@ -411,6 +428,7 @@ while age < 50:
             print("5 - Engineering")
             print("6 - Criminal Justice")
             print("7 - Computer Science")
+            print("8 - Architectural Design")
             job = input("\nWhat should I study? ")
         
         if job == "1":
@@ -427,6 +445,8 @@ while age < 50:
             job_title = "Police"
         elif job == "7":
             job_title = "Software Developer"
+        elif job == "8":
+            job_title = "Architect"
 
     if age >= 18:
         if job_title == "Doctor":
@@ -443,6 +463,8 @@ while age < 50:
             money += 55000
         elif job_title == "Software Developer":
             money += 120000
+        elif job_title == "Architect":
+            money += 100000
     if first_name == "Murasaki":
         if surname == "Shikibu":
             if job_title == "Writer":
