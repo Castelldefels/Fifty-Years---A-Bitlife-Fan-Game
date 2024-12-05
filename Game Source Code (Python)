@@ -310,6 +310,7 @@ pet_40 = 0
 rand_addiction = random.choice(addiction)
 score = 0
 animal = 0
+debt = 0
 animal_gender = random.choice(genders)
 vacation_location = random.choice(cities)
 tiny_house_achievement = 0 ##Buy a tiny house
@@ -429,6 +430,8 @@ while age < 50:
             print("6 - Criminal Justice")
             print("7 - Computer Science")
             print("8 - Architectural Design")
+            print("9 - Religious Studies")
+            print("0 - I don't want to attend college.")
             job = input("\nWhat should I study? ")
         
         if job == "1":
@@ -447,24 +450,62 @@ while age < 50:
             job_title = "Software Developer"
         elif job == "8":
             job_title = "Architect"
+        elif job == "9":
+            job_title = "Preacher"
+        elif job == "0":
+            job_title = "Grocery Store Owner"
 
     if age >= 18:
         if job_title == "Doctor":
-            money += 140000
+            if country in {"Japan", "Thailand", "Singapore", "China", "Moldova", "Kuwait", "India", "Indonesia", "South Korea"}:
+                    money += 140000
+            else:
+                money += 70000
         elif job_title == "Teacher":
-            money += 35000
+            if country in {"Japan", "Thailand", "Singapore", "China", "Moldova", "Kuwait", "India", "Indonesia", "South Korea"}:
+                    money += 35000
+            else:
+                money += 17500
         elif job_title == "Attorney":
-            money += 95000
+            if country in {"Japan", "Thailand", "Singapore", "China", "Moldova", "Kuwait", "India", "Indonesia", "South Korea"}:
+                    money += 95000
+            else:
+                money += 47500
         elif job_title == "Writer":
-            money += 30000
+            if country in {"Japan", "Thailand", "Singapore", "China", "Moldova", "Kuwait", "India", "Indonesia", "South Korea"}:
+                money += 30000
+            else:
+                money += 15000
         elif job_title == "Engineer":
-            money += 75000
+            if country in {"Japan", "Thailand", "Singapore", "China", "Moldova", "Kuwait", "India", "Indonesia", "South Korea"}:
+                money += 75000
+            else:
+                money += 37500
         elif job_title == "Police":
-            money += 55000
+            if country in {"Japan", "Thailand", "Singapore", "China", "Moldova", "Kuwait", "India", "Indonesia", "South Korea"}: 
+                money += 55000
+            else:
+                money += 27500
         elif job_title == "Software Developer":
-            money += 120000
+            if country in {"Japan", "Thailand", "Singapore", "China", "Moldova", "Kuwait", "India", "Indonesia", "South Korea"}:
+                money += 120000
+            else:
+                money += 60000
         elif job_title == "Architect":
-            money += 100000
+            if country in {"Japan", "Thailand", "Singapore", "China", "Moldova", "Kuwait", "India", "Indonesia", "South Korea"}:
+                money += 100000
+            else:
+                money += 50000
+        elif job_title == "Preacher":
+            if country in {"Japan", "Thailand", "Singapore", "China", "Moldova", "Kuwait", "India", "Indonesia", "South Korea"}:
+                money += 40000
+            else:
+                money += 20000
+        elif job_title == "Grocery Store Owner":
+            if country in {"Japan", "Thailand", "Singapore", "China", "Moldova", "Kuwait", "India", "Indonesia", "South Korea"}:
+                money += 60000
+            else:
+                money += 30000
     if first_name == "Murasaki":
         if surname == "Shikibu":
             if job_title == "Writer":
@@ -576,6 +617,26 @@ while age < 50:
         
     elif age == 45 and child == "1":
         print(f"Your child, {child_name}, has given birth to your grandchild, {grandchild_name}.")
+        print("There has been a bank computer glitch and you are now in debt.")
+        print("\n1 - Call the bank and try to sort out the problem.")
+        print("2 - Hack into the bank and try to fix the problem on my own.")
+        print("3 - Wait for the bank to figure it out and solve the problem themselves.")
+        debt = input("\nWhat will you do?")
+        
+        if debt == "1":
+            print("The bank was very understanding of your situation, and hired someone to fix the problem.")
+        if debt == "2":
+            if job_title == "Software Developer":
+                print("You have successfully fixed the problem and also given yourself a little money too.")
+                money += 10000
+            else:
+                print("You only made the problem worse.")
+                money -= 1500000
+        
+        if debt == "3":
+            print("The bank never realised what happened, and your debt continued to exist.")
+            money -= 1000000
+        
         
     elif age == 49 and vac == 0:
         print("You only have one year left to live, and you want to do something fun before you cross over to the great beyond.")
