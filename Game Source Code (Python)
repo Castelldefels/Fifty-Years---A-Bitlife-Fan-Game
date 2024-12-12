@@ -35,7 +35,7 @@ cities = [
     "Minsk, Belarus", "Brest, Belarus", "Gomel, Belarus", "Kyiv, Ukraine", "Dnipro, Ukraine", "L'viv, Ukraine", 
     "Kharkiv, Ukraine", "Sevastopol, Ukraine", "Chisinau, Moldova", "Tiraspol, Moldova", "Kaunas, Lithuania", 
     "Vilnius, Lithuania", "Riga, Latvia", "Tallinn, Estonia", "Helsinki, Finland", "Turku, Finland",
-    "Apia, Samoa", "Asau, Samoa", "Suva, Fiji", "Labasa, Fiji", "Bairiki, Kiribati", "Bikenibeu, Fiji"
+    "Apia, Samoa", "Asau, Samoa", "Suva, Fiji", "Labasa, Fiji", "Bairiki, Kiribati", "Bikenibeu, Kiribati"
 ]
 
 names = {
