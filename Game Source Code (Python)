@@ -34,7 +34,8 @@ cities = [
     "Auckland, New Zealand", "Wellington, New Zealand", "Christchurch, New Zealand", "Amman, Jordan", 
     "Minsk, Belarus", "Brest, Belarus", "Gomel, Belarus", "Kyiv, Ukraine", "Dnipro, Ukraine", "L'viv, Ukraine", 
     "Kharkiv, Ukraine", "Sevastopol, Ukraine", "Chisinau, Moldova", "Tiraspol, Moldova", "Kaunas, Lithuania", 
-    "Vilnius, Lithuania", "Riga, Latvia", "Tallinn, Estonia", "Helsinki, Finland", "Turku, Finland"
+    "Vilnius, Lithuania", "Riga, Latvia", "Tallinn, Estonia", "Helsinki, Finland", "Turku, Finland",
+    "Apia, Samoa", "Asau, Samoa", "Suva, Fiji", "Labasa, Fiji", "Bairiki, Kiribati", "Bikenibeu, Fiji"
 ]
 
 names = {
@@ -307,6 +308,21 @@ names = {
         "female": ["Maria", "Liisa", "Kaisa", "Sanna", "Helena"],
         "male": ["Mikko", "Juhani", "Antti", "Eero", "Lauri"],
         "surnames": ["Korhonen", "Nieminen", "Mäkelä", "Lahtinen", "Hämäläinen"]
+    },
+    "Samoa": {
+        "female": ["Alofa", "Talia", "Mele", "Leilani", "Fa'amalosi"],
+        "male": ["Tuilaepa", "Fatu", "Lavea", "Solomone", "Viliamu"],
+        "surnames": ["Tuala", "Aiono", "Fa'avae", "Leaana", "Tupai"]
+    },
+    "Fiji": {
+        "female": ["Arieta", "Siteri", "Vere", "Litia", "Ana"],
+        "male": ["Tuilagi", "Meli", "Ratu", "Jone", "Peni"],
+        "surnames": ["Naliva", "Vunivalu", "Banuve", "Naiqama", "Tuwai"]
+    },
+    "Kiribati": {
+        "female": ["Miriama", "Teiko", "Tiare", "Arieta", "Rongo"],
+        "male": ["Beniamina", "Taito", "Teano", "Jone", "Taitai"],
+        "surnames": ["Tebano", "Teikimua", "Taitai", "Rimon", "Akaoua"]
     }
 }
 addiction = ["Alcohol", "Smoking", "Meth", "Crack", "Anime", "Dopamine"]
@@ -332,6 +348,9 @@ rand_addiction = random.choice(addiction)
 score = 0
 animal = 0
 debt = 0
+music = 0
+music_job = 0
+political_event = 0
 animal_gender = random.choice(genders)
 vacation_location = random.choice(cities)
 tiny_house_achievement = 0 ##Buy a tiny house
@@ -419,6 +438,23 @@ while age < 50:
             
     elif age == 11:
         print("I have started lower secondary school.")
+    elif age == 13:
+        print("Your parents have been asking you to learn a new instrument.")
+        print("\n1 - I want to learn guitar.")
+        print("2 - Piano sounds easy and fun.")
+        print("3 - Maybe not an instrument, but I'd like to learn to sing.")
+        print("4 - Music isn't for me.")
+        music = input("\nWhat will you do?")
+        
+        if music == "1":
+            print("You like playing guitar and want to continue your lessons.")
+        elif music == "2":
+            print("Piano wasn't as easy as you thought, but you quickly catch on and eventually become very talented.")
+        elif music == "3":
+            print("You become the highlight of all holiday parties.")
+        elif music == "4":
+            print("Though your parents are disappointed, they understand your apprehension.")
+        
     elif age == 14:
         print("I have started upper secondary school.")
     elif age == 15:
@@ -530,6 +566,9 @@ while age < 50:
                 money += 60000
             else:
                 money += 30000
+        elif job_title == "Professional Musician":
+            money += 1000000
+            
     if first_name == "Murasaki":
         if surname == "Shikibu":
             if job_title == "Writer":
@@ -566,6 +605,16 @@ while age < 50:
             money -= 50000
             house_size = "Tiny house"
             tiny_house_achievement = 1
+            
+    if music in {"1","2","3"} and age == 20:
+        print("A talent agent overheard you performing in a lounge one night and has offered you a record deal!")
+        print("\n1 - I've always wanted to be a professional musician!")
+        print("2 - No, thank you!")
+        music_job = input("\nWhat will you do?")
+        
+        if music_job == "1":
+            print("You take the job and earn a lot of money.")
+            job_title = "Professional Musician"
     
     if child == 0 and age == 25:
         print("Do you want a child?")
@@ -604,6 +653,25 @@ while age < 50:
             residence = random.choice(cities)
         if move == "2":
             residence = "a boat."
+            
+    elif age == 32:
+        print("There is an election in your country. Who will you vote for?")
+        print("\n1 - The purple party candidate")
+        print("2 - The magenta party candidate")
+        print("3 - The cerulean party candidate")
+        print("4 - I don't want to vote.")
+        political_event = input("\nWhat will you do?")
+        
+        if political_event == "1":
+            print("The purple party gave a tax refund to every citizen.")
+            money += 4500
+        if political_event == "2":
+            print("The magenta party deported all of the immigrants, legal and illegal!")
+            if move == "1":
+                print("You have been deported to another country!")
+                residence = random.choice(cities)
+        elif political_event == "3":
+            print("The cerulean party candidate ended up being corrupt and was arrested.")
         
     elif age == 33 and relationship not in {"3"}:
         print("You think your spouse may be cheating on you!")
