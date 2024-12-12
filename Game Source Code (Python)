@@ -363,7 +363,7 @@ cont = 0
 tax_fraud = 0
 
 print("***FIFTY YEARS BY CASTELLDEFELS***")
-print("VERSION 1.2")
+print("VERSION 1.4")
 print("Try to live your best life and get a good score at the end!")
 
 first_name = "(none)"
