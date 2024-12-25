@@ -35,7 +35,20 @@ cities = [
     "Minsk, Belarus", "Brest, Belarus", "Gomel, Belarus", "Kyiv, Ukraine", "Dnipro, Ukraine", "L'viv, Ukraine", 
     "Kharkiv, Ukraine", "Sevastopol, Ukraine", "Chisinau, Moldova", "Tiraspol, Moldova", "Kaunas, Lithuania", 
     "Vilnius, Lithuania", "Riga, Latvia", "Tallinn, Estonia", "Helsinki, Finland", "Turku, Finland",
-    "Apia, Samoa", "Asau, Samoa", "Suva, Fiji", "Labasa, Fiji", "Bairiki, Kiribati", "Bikenibeu, Kiribati"
+    "Apia, Samoa", "Asau, Samoa", "Suva, Fiji", "Labasa, Fiji", "Bairiki, Kiribati", "Bikenibeu, Kiribati",
+    "Stockholm, Sweden", "Göthenburg, Sweden", "Malmö, Sweden", "Oslo, Norway", "Tromso, Norway", "Reykjavik, Iceland",
+    "Warsaw, Poland", "Krakow, Poland", "Katowice, Poland", "Prague, Czechia", "Ostrava, Czechia", "Bratislava, Slovakia",
+    "Bucharest, Romania", "Brasov, Romania", "Constanta, Romania", "Budapest, Hungary", "Pecs, Hungary", "Sofia, Bulgaria",
+    "Varna, Bulgaria", "Ljubljana, Slovenia", "Zagreb, Croatia", "Belgrade, Serbia", "Podgorica, Montenegro",
+    "Pristina, Kosovo", "Skopje, Macedonia", "Tirana, Albania", "Athens, Greece", "Thessaloniki, Greece", "Istanbul, Turkey",
+    "Ankara, Turkey", "Ismir, Turkey", "Berlin, Germany", "Hamburg, Germany", "Munich, Germany", "Stuttgart, Germany",
+    "Vienna, Austria", "Salzburg, Austria", "Bern, Switzerland", "Geneva, Switzerland", "Rome, Italy", "Venice, Italy",
+    "Milan, Italy", "Palermo, Italy", "Valletta, Malta", "Nantes, France", "Paris, France", "Marseille, France", "Monte Carlo, Monaco",
+    "Brussels, Belgium", "Antwerp, Belgium", "Amsterdam, Netherlands", "The Hague, Netherlands", "Luxembourg, Luxembourg",
+    "Vaduz, Lichtenstein", "San Marino, San Marino", "Andorra-la-Vella, Andorra", "Madrid, Spain", "Barcelona, Spain", "Valenia, Spain",
+    "A Coruña, Spain", "Lisbon, Portugal", "Faro, Portugal", "London, United Kingdom", "Bristol, United Kingdom",
+    "Cardiff, United Kingdom", "Sheffield, United Kingdom", "Dublin, Ireland", "Cork, Ireland", "Shannon, Ireland", 
+    "Limerick, Ireland", "Nicosia, Cyprus"
 ]
 
 names = {
@@ -323,7 +336,187 @@ names = {
         "female": ["Miriama", "Teiko", "Tiare", "Arieta", "Rongo"],
         "male": ["Beniamina", "Taito", "Teano", "Jone", "Taitai"],
         "surnames": ["Tebano", "Teikimua", "Taitai", "Rimon", "Akaoua"]
-    }
+    },
+    "Norway": {
+        "male": ["Henrik", "Lars", "Erik", "Ole", "Magnus"],
+        "female": ["Ingrid", "Emma", "Nora", "Anna", "Maria"],
+        "surnames": ["Hansen", "Johansen", "Olsen", "Andersen", "Pedersen"]
+    },
+    "Sweden": {
+        "male": ["Erik", "Lars", "Gustav", "Johan", "Oscar"],
+        "female": ["Emma", "Anna", "Alice", "Elsa", "Sara"],
+        "surnames": ["Andersson", "Johansson", "Karlsson", "Nilsson", "Eriksson"]
+    },
+    "Iceland": {
+        "male": ["Jón", "Ólafur", "Guðmundur", "Emil", "Einar"],
+        "female": ["Guðbjörg", "Anna", "María", "Ingibjörg", "Björk"],
+        "surnames": ["Jónsson", "Ólafsson", "Sigurðsson", "Guðmundsson", "Björnsson"]
+    },
+    "Poland": {
+        "male": ["Jan", "Piotr", "Andrzej", "Tomasz", "Michał"],
+        "female": ["Anna", "Maria", "Katarzyna", "Agnieszka", "Monika"],
+        "surnames": ["Nowak", "Kowalski", "Wiśniewski", "Wójcik", "Zieliński"]
+    },
+    "Czechia": {
+        "male": ["Jan", "Jakub", "Petr", "Tomáš", "Martin"],
+        "female": ["Anna", "Eva", "Petra", "Jana", "Kateřina"],
+        "surnames": ["Novák", "Svoboda", "Černý", "Dvořák", "Procházka"]
+    },
+    "Slovakia": {
+        "male": ["Ján", "Peter", "Martin", "Michal", "Tomáš"],
+        "female": ["Jana", "Mária", "Anna", "Lucia", "Zuzana"],
+        "surnames": ["Kováč", "Novák", "Horváth", "Varga", "Tóth"]
+    },
+    "Romania": {
+        "male": ["Andrei", "Alexandru", "Ioan", "Mihai", "Gabriel"],
+        "female": ["Maria", "Elena", "Ana", "Ioana", "Camelia"],
+        "surnames": ["Ionescu", "Popescu", "Georgescu", "Dumitru", "Stan"]
+    },
+    "Hungary": {
+        "male": ["László", "János", "Péter", "István", "Zoltán"],
+        "female": ["Anna", "Júlia", "Katalin", "Eszter", "Lilla"],
+        "surnames": ["Kovács", "Nagy", "Tóth", "Szabó", "Varga"]
+    },
+    "Bulgaria": {
+        "male": ["Ivan", "Georgi", "Nikolai", "Alexander", "Dimitar"],
+        "female": ["Maria", "Elena", "Ivana", "Viktoria", "Ana"],
+        "surnames": ["Ivanov", "Georgiev", "Dimitrov", "Petrov", "Nikolov"]
+    },
+    "Slovenia": {
+        "male": ["Luka", "Marko", "Janez", "Miha", "Matevž"],
+        "female": ["Ana", "Maja", "Lara", "Nina", "Teja"],
+        "surnames": ["Novak", "Kovačič", "Horvat", "Zupančič", "Potočnik"]
+    },
+    "Croatia": {
+        "male": ["Ivan", "Marko", "Luka", "Ante", "Petar"],
+        "female": ["Ana", "Ivana", "Marija", "Jelena", "Petra"],
+        "surnames": ["Horvat", "Novak", "Kovačević", "Petrović", "Jurić"]
+    },
+    "Serbia": {
+        "male": ["Aleksandar", "Marko", "Nikola", "Jovan", "Stefan"],
+        "female": ["Ana", "Ivana", "Marija", "Jelena", "Teodora"],
+        "surnames": ["Jovanović", "Petrović", "Nikolić", "Ilić", "Marković"]
+    },
+    "Bosnia": {
+        "male": ["Amir", "Adnan", "Haris", "Muhamed", "Denis"],
+        "female": ["Amina", "Selma", "Lejla", "Amra", "Zara"],
+        "surnames": ["Hasanović", "Hrustić", "Jukić", "Kovačević", "Salkanović"]
+    },
+    "Montenegro": {
+        "male": ["Nikola", "Marko", "Luka", "Jovan", "Aleksandar"],
+        "female": ["Marija", "Ana", "Ivana", "Tamara", "Jelena"],
+        "surnames": ["Petrović", "Vuković", "Jovanović", "Marković", "Nikolić"]
+    },
+    "Kosovo": {
+        "male": ["Arben", "Ilir", "Luan", "Valon", "Bekim"],
+        "female": ["Lirim", "Ema", "Erza", "Ariana", "Dafina"],
+        "surnames": ["Krasniqi", "Berisha", "Gashi", "Shala", "Hoxha"]
+    },
+    "North Macedonia": {
+        "male": ["Stefan", "Luka", "Aleksandar", "Ivan", "Nikola"],
+        "female": ["Ana", "Marija", "Kristina", "Elena", "Teodora"],
+        "surnames": ["Petrovski", "Nikolovski", "Stojanovski", "Dimitrov", "Kovačevski"]
+    },
+    "Albania": {
+        "male": ["Erion", "Ardit", "Mark", "Luan", "Bledar"],
+        "female": ["Elda", "Elira", "Albana", "Mirela", "Donika"],
+        "surnames": ["Berisha", "Hoxha", "Deda", "Shala", "Krasniqi"]
+    },
+    "Greece": {
+        "male": ["Giorgos", "Nikos", "Andreas", "Ioannis", "Vasilis"],
+        "female": ["Maria", "Eleni", "Anna", "Katerina", "Sofia"],
+        "surnames": ["Papadopoulos", "Ioannidis", "Nikolaidis", "Christodoulou", "Georgiou"]
+    },
+    "Turkey": {
+        "male": ["Ahmet", "Mehmet", "Mustafa", "Ali", "Hasan"],
+        "female": ["Ayşe", "Fatma", "Zeynep", "Elif", "Emine"],
+        "surnames": ["Yılmaz", "Demir", "Çelik", "Şahin", "Kaya"]
+    },
+    "Germany": {
+        "male": ["Maximilian", "Alexander", "Paul", "Lukas", "Leon"],
+        "female": ["Emma", "Anna", "Mia", "Sophie", "Marie"],
+        "surnames": ["Müller", "Schmidt", "Weber", "Meyer", "Wagner"]
+    },
+    "Austria": {
+        "male": ["Lukas", "Maximilian", "Paul", "Andreas", "Josef"],
+        "female": ["Anna", "Maria", "Emma", "Laura", "Sophie"],
+        "surnames": ["Müller", "Wagner", "Gruber", "Schwarz", "Bauer"]
+    },
+    "Switzerland": {
+        "male": ["Luca", "Noah", "Elias", "Leon", "Matteo"],
+        "female": ["Emma", "Mia", "Laura", "Sophia", "Anna"],
+        "surnames": ["Müller", "Meier", "Schmidt", "Weber", "Keller"]
+    },
+    "Italy": {
+        "male": ["Giovanni", "Alessandro", "Luca", "Matteo", "Leonardo"],
+        "female": ["Maria", "Giulia", "Sofia", "Francesca", "Alessandra"],
+        "surnames": ["Rossi", "Bianchi", "Ferrari", "Esposito", "Russo"]
+    },
+    "Malta": {
+        "male": ["Joseph", "Mark", "Michael", "Paul", "John"],
+        "female": ["Maria", "Anna", "Lucia", "Michelle", "Clara"],
+        "surnames": ["Mizzi", "Borg", "Camilleri", "Azzopardi", "Vella"]
+    },
+    "France": {
+        "male": ["Pierre", "Jean", "Michel", "François", "Louis"],
+        "female": ["Marie", "Claire", "Sophie", "Isabelle", "Jeanne"],
+        "surnames": ["Dupont", "Martin", "Bernard", "Lefevre", "Thomas"]
+    },
+    "Monaco": {
+        "male": ["Pierre", "Jean", "François", "Charles", "Michel"],
+        "female": ["Marie", "Isabelle", "Sophie", "Claire", "Caroline"],
+        "surnames": ["Grimaldi", "Monte Carlo", "Bernard", "Dupont", "Lefevre"]
+    },
+    "Belgium": {
+        "male": ["Olivier", "Louis", "Thomas", "Simon", "Jan"],
+        "female": ["Marie", "Anne", "Sophie", "Claire", "Emma"],
+        "surnames": ["Dupont", "Janssens", "Peeters", "Lambert", "Maes"]
+    },
+    "Netherlands": {
+        "male": ["Jan", "Pieter", "Willem", "Mark", "Lucas"],
+        "female": ["Emma", "Anna", "Sophie", "Julia", "Laura"],
+        "surnames": ["de Jong", "Jansen", "de Vries", "Bakker", "Visser"]
+    },
+    "Luxembourg": {
+        "male": ["Jean", "Paul", "Pierre", "Michel", "Henri"],
+        "female": ["Marie", "Sophie", "Claire", "Anne", "Julie"],
+        "surnames": ["Müller", "Weber", "Schneider", "Wagner", "Kox"]
+    },
+    "Liechtenstein": {
+        "male": ["Jonas", "Luca", "Paul", "Elias", "Max"],
+        "female": ["Anna", "Mia", "Sofia", "Elena", "Julia"],
+        "surnames": ["Müller", "Meier", "Schädler", "Beck", "Rusch"]
+    },
+    "San Marino": {
+        "male": ["Marco", "Andrea", "Stefano", "Luca", "Giovanni"],
+        "female": ["Maria", "Anna", "Giulia", "Sofia", "Francesca"],
+        "surnames": ["Rossi", "Bianchi", "Gatti", "Valentini", "Bellucci"]
+    },
+    "Andorra": {
+        "male": ["Marc", "Jordi", "Pau", "Oriol", "Xavier"],
+        "female": ["Maria", "Marta", "Laura", "Helena", "Anna"],
+        "surnames": ["García", "López", "Rodríguez", "Pérez", "Fernández"]
+    },
+    "Spain": {
+        "male": ["José", "Antonio", "Manuel", "Francisco", "David"],
+        "female": ["María", "Carmen", "Laura", "Isabel", "Ana"],
+        "surnames": ["García", "Martínez", "López", "Sánchez", "Rodríguez"]
+    },
+    "Portugal": {
+        "male": ["João", "Miguel", "Pedro", "José", "Carlos"],
+        "female": ["Maria", "Ana", "Sofia", "Joana", "Marta"],
+        "surnames": ["Silva", "Santos", "Pereira", "Costa", "Oliveira"]
+    },
+    "United Kingdom": {
+        "male": ["James", "William", "George", "Thomas", "Oliver"],
+        "female": ["Olivia", "Emily", "Charlotte", "Sophie", "Amelia"],
+        "surnames": ["Smith", "Johnson", "Williams", "Taylor", "Brown"]
+    },
+    "Ireland": {
+        "male": ["James", "Sean", "Patrick", "Conor", "Michael"],
+        "female": ["Mary", "Emily", "Sarah", "Aoife", "Kate"],
+        "surnames": ["Murphy", "Kelly", "O'Connor", "Walsh", "O'Brien"]
+    },
 }
 addiction = ["Alcohol", "Smoking", "Meth", "Crack", "Anime", "Dopamine"]
 family = ["Mother", "Father"]
@@ -361,44 +554,54 @@ genji_achievement = 0 ##Be named Murasaki Shikibu and become a writer
 teamwork_achievement = 0 ##Work together on your school project
 cont = 0
 tax_fraud = 0
+char_gen = 0
 
 print("***FIFTY YEARS BY CASTELLDEFELS***")
-print("VERSION 1.4")
+print("VERSION 1.5")
 print("Try to live your best life and get a good score at the end!")
 
 first_name = "(none)"
 surname = "(none)"
 
-player_gender = random.choice(genders)
-residence = random.choice(cities)
-country = residence.split(", ")[1]
+rich_countries = {"Japan", "Thailand", "Singapore", "China", "Moldova", "Kuwait", "India", "Indonesia", "South Korea", "Latvia", "Lithuania", "Estonia", "Finland", "Norway", "Sweden", "Iceland", "Poland", "Czechia", "Slovakia", "Romania", "Hungary", "Bulgaria", "Slovenia", "Croatia", "Serbia", "Bosnia", "Montenegro", "Kosovo", "North Macedonia", "Albania", "Greece", "Germany", "Austria", "Switzerland", "Italy", "Malta", "France", "Monaco", "Belgium", "Netherlands", "Luxembourg", "Liechtenstein", "San Marino", "Andorra", "Spain", "Portugal", "United Kingdom", "Ireland"}
 
-rich_countries = {"Japan", "Thailand", "Singapore", "China", "Moldova", "Kuwait", "India", "Indonesia", "South Korea", "Latvia", "Lithuania", "Estonia", "Finland"}
+print("Would you like to start as a randomised character or create your own?")
+print("\n1 - Random")
+print("2 - Customised")
+char_gen = input("Please choose an option.")
 
-if country in names:
+if char_gen == "1":
+  if country in names:
     if player_gender == "Male":
-        first_name = random.choice(names[country]["male"])
+      first_name = random.choice(names[country]["male"])
+      player_gender = random.choice(genders)
+      residence = random.choice(cities)
+      country = residence.split(", ")[1]
     else:
-        first_name = random.choice(names[country]["female"])
-    
-    surname = random.choice(names[country]["surnames"]) if names[country]["surnames"] else ""
-
-if first_name == "Semichayevskaya":
-    what_was_that_name_achievement = 1
+      first_name = random.choice(names[country]["female"])
+      surname = random.choice(names[country]["surnames"]) if names[country]["surnames"] else ""
+      player_gender = random.choice(genders)
+      residence = random.choice(cities)
+      country = residence.split(", ")[1]
+  if first_name == "Semichayevskaya":
+      what_was_that_name_achievement = 1
+elif char_gen == "2":
+  first_name = input("What is your first name?")
+  surname = input("What is your surname?")
+  residence = input ("Where would you like to live? It is important that you capitalise and put a comma and a space between the city and country names.")
+  country = residence.split(", ")[1]
+  player_gender = input("Finally, what gender are you? male/female (write it out completely and do not capitalise)")
 
 # Corrected condition for countries
-if country in ["South Korea", "Vietnam", "North Korea"]:
+if country in ["South Korea", "Vietnam", "North Korea", "Hungary"]:
     print(f"My name is {surname} {first_name} and I was born in {residence}. I am a {player_gender}.")
 else:
     print(f"My name is {first_name} {surname} and I was born in {residence}. I am a {player_gender}.")
 
 # Select child and grandchild names based on gender
-child_gender = random.choice(["male", "female"])
-child_name = random.choice(names[country][child_gender])
-grandchild_gender = random.choice(["male", "female"])
-grandchild_name = random.choice(names[country][grandchild_gender])
-friend_gender = random.choice(["male","female"])
-friend_name = random.choice(names[country][friend_gender])
+child_name = 0
+grandchild_name = 0
+friend_name = 0
 job_title = "Unemployed"
 
 age = 0
@@ -413,25 +616,25 @@ while age < 50:
         print("I have started primary school.")
         if pet == 0:
             print("You have become lonely lately, and you want to find a solution.")
-            print("\n1 - Become friends with",friend_name)
+            print("\n1 - Make a friend")
             print("2 - Get a pet")
             pet = input("\nWhat will you do?")
             
             if pet == "1":
-                print("You and",friend_name,"have a lot of fun together.")
+                friend_name = input("What is your new friend's name?")
             if pet == "2":
                 print("You and your dog play a lot of games of fetch and make some good memories together. <3")
     if age == 10:
-        print("Your teacher assigns you and your friend,",friend_name," a project worth half of your grade.")
+        print("Your teacher assigns you and your friend a project worth half of your grade.")
         print("\n1 - Take over the project.")
         print("2 - Share responsibility.")
-        print("3 - Let",friend_name," do all of the project on their own.")
+        print("3 - Let my friend do all of the project on their own.")
         proj = input("\nWhat will you do?")
         
         if proj == "1":
             print("You took over the entire project, stressing yourself out and alienating your friend.")
         if proj == "2":
-            print(friend_name," had some good insights, and you both received the top grade in the class!")
+            print("Your friend had some good insights, and you both received the top grade in the class!")
             teamwork_achievement = 1
         if proj == "3":
             print("Your friend was mad at you for doing nothing and requested that you be removed from the project.")
@@ -569,9 +772,7 @@ while age < 50:
         elif job_title == "Professional Musician":
             money += 1000000
             
-    if first_name == "Murasaki":
-        if surname == "Shikibu":
-            if job_title == "Writer":
+    if first_name == "Murasaki" and surname == "Shikibu" and job_title == "Writer":
                 genji_achievement = 1
 
     if relationship == 0 and age >= 19:
@@ -624,7 +825,7 @@ while age < 50:
         
         if child == "1":
             money -= 55000
-            rel_child = child_name
+            child_name = input("What is your child's name?")
         else:
             rel_child = "No Children"
     
@@ -637,10 +838,7 @@ while age < 50:
         animal = input("\nWhat will you do?")
         
         if animal in {"1", "2", "3"}:
-            if animal_gender == "Male":
-                animal_name = random.choice(names[country]["male"])
-            elif animal_gender == "Female":
-                animal_name = random.choice(names[country]["female"])
+            animal_name = input("What is your pet's name?")
       
     elif age == 30 and move == 0:
         print("You have been offered an opportunity to leave", residence)
@@ -726,7 +924,7 @@ while age < 50:
             money -= money*0.20
     
     elif age == 45 and child == "1":
-        print(f"Your child, {child_name}, has given birth to your grandchild, {grandchild_name}.")
+        grandchild_name = input("Your child has given birth to a baby, and they want you to decide the name.")
         print("There has been a bank computer glitch and you are now in debt.")
         print("\n1 - Call the bank and try to sort out the problem.")
         print("2 - Hack into the bank and try to fix the problem on my own.")
