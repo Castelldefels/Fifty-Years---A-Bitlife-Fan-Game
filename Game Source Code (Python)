@@ -75,7 +75,7 @@ names = {
     "Myanmar": {
         "female": ["Nan", "Sanda", "Thang", "Thiri", "Hayma"],
         "male": ["Ko", "Aung", "Han", "Thura", "Wunna"],
-        "surnames": [""]
+        "surnames": []
     },
     "Bangladesh": {
         "female": ["Chaaya", "Arulmani", "Kamala", "Diya", "Nasrin"],
@@ -555,15 +555,25 @@ teamwork_achievement = 0 ##Work together on your school project
 cont = 0
 tax_fraud = 0
 char_gen = 0
+first_name = 0
+surname = 0
 
 print("***FIFTY YEARS BY CASTELLDEFELS***")
 print("VERSION 1.5")
 print("Try to live your best life and get a good score at the end!")
 
-first_name = "(none)"
-surname = "(none)"
-
 rich_countries = {"Japan", "Thailand", "Singapore", "China", "Moldova", "Kuwait", "India", "Indonesia", "South Korea", "Latvia", "Lithuania", "Estonia", "Finland", "Norway", "Sweden", "Iceland", "Poland", "Czechia", "Slovakia", "Romania", "Hungary", "Bulgaria", "Slovenia", "Croatia", "Serbia", "Bosnia", "Montenegro", "Kosovo", "North Macedonia", "Albania", "Greece", "Germany", "Austria", "Switzerland", "Italy", "Malta", "France", "Monaco", "Belgium", "Netherlands", "Luxembourg", "Liechtenstein", "San Marino", "Andorra", "Spain", "Portugal", "United Kingdom", "Ireland"}
+
+
+# Select child and grandchild names based on gender
+player_gender = random.choice(genders)
+child_name = 0
+grandchild_name = 0
+friend_name = 0
+job_title = "Unemployed"
+residence = random.choice(cities)
+country = residence.split(", ")[1]
+
 
 print("Would you like to start as a randomised character or create your own?")
 print("\n1 - Random")
@@ -571,26 +581,22 @@ print("2 - Customised")
 char_gen = input("Please choose an option.")
 
 if char_gen == "1":
-  if country in names:
-    if player_gender == "Male":
-      first_name = random.choice(names[country]["male"])
-      player_gender = random.choice(genders)
-      residence = random.choice(cities)
-      country = residence.split(", ")[1]
-    else:
-      first_name = random.choice(names[country]["female"])
-      surname = random.choice(names[country]["surnames"]) if names[country]["surnames"] else ""
-      player_gender = random.choice(genders)
-      residence = random.choice(cities)
-      country = residence.split(", ")[1]
-  if first_name == "Semichayevskaya":
-      what_was_that_name_achievement = 1
+    if country in names:
+        if player_gender == "Male":
+            first_name = random.choice(names[country]["male"])
+            surname = random.choice(names[country]["surnames"])
+        else:
+            first_name = random.choice(names[country]["female"])
+            surname = random.choice(names[country]["surnames"]) if names[country]["surnames"] else ""
+
+    if first_name == "Semichayevskaya":
+        what_was_that_name_achievement = 1
 elif char_gen == "2":
-  first_name = input("What is your first name?")
-  surname = input("What is your surname?")
-  residence = input ("Where would you like to live? It is important that you capitalise and put a comma and a space between the city and country names.")
-  country = residence.split(", ")[1]
-  player_gender = input("Finally, what gender are you? male/female (write it out completely and do not capitalise)")
+    first_name = input("What is your first name?")
+    surname = input("What is your surname?")
+    residence = input ("Where would you like to live? It is important that you capitalise and put a comma and a space between the city and country names.")
+    country = residence.split(", ")[1]
+    player_gender = input("Finally, what gender are you? male/female (write it out completely and do not capitalise)")
 
 # Corrected condition for countries
 if country in ["South Korea", "Vietnam", "North Korea", "Hungary"]:
@@ -598,11 +604,6 @@ if country in ["South Korea", "Vietnam", "North Korea", "Hungary"]:
 else:
     print(f"My name is {first_name} {surname} and I was born in {residence}. I am a {player_gender}.")
 
-# Select child and grandchild names based on gender
-child_name = 0
-grandchild_name = 0
-friend_name = 0
-job_title = "Unemployed"
 
 age = 0
 
@@ -684,7 +685,7 @@ while age < 50:
         print("I have graduated upper secondary school and will start college.")
         
         job = ""
-        while job not in {"1", "2", "3", "4", "5", "6", "7", "8"}:
+        while job not in {"1", "2", "3", "4", "5", "6", "7", "8", "9", "0"}:
             print("\n1 - Medicine")
             print("2 - Education")
             print("3 - Law")
